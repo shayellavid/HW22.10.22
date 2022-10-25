@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--create an HTML page with 2 text box (input type text) + button
+   when clicking the button print:
+      i.e. first-text-box is : abcd 
+           second-text-box is: efgh
+   length of the string in the first text box. i.e 4
+   length of the string in the second text box. i.e. 4
+   this combination: first-textbox + second-textbox + first-textbox i.e. abcdefghacbd
+   merge letters combination: i.e. aebfcgdh 
+        (*bonus if second word is shorter then round-robin from the start)
+   first-textbox-reverse. i.e. dcba
+   second letter from first-textbox + second-textbox. i.e. bf-->
+
+    <p>word 1 : <input type="text" id="text1_id">
+        word 2 : <input type="text" id="text2_id">
+        <button onclick="pushButton1()">result1</button>
+        <button onclick="pushButton2()">result2</button>
+        <button onclick="pushButton3()">result3</button>
+        <button onclick="pushButton4()">result4</button>
+        <button onclick="pushButton5()">result5</button>
+    </p>
+    <p id="result"></p>
+
+    <script>
+        function pushButton1() {
+            const len1 = document.getElementById('text1_id').value.length;
+            const len2 = document.getElementById('text2_id').value.length;
+            document.getElementById('result').innerHTML = `length 1 = ${len1} <br> length 2 = ${len2}`;
+
+        }
+        function pushButton2() {
+            const word1 = document.getElementById('text1_id').value;
+            const word2 = document.getElementById('text2_id').value;
+            document.getElementById('result').innerHTML = word1 + word2 + word1;
+        }
+        function pushButton3() {
+            const word1 = document.getElementById('text1_id').value;
+            const word2 = document.getElementById('text2_id').value;
+            var mergedString = '';
+            for (var i = 0; i <= word1.length || i <= word2.length; i++) {
+                mergedString += word1[i] + word2[i]
+            }
+            document.getElementById('result').innerHTML = mergedString;
+
+        }
+        function pushButton4() {
+            const word1 = document.getElementById('text1_id').value;
+
+            var revers = '';
+            for (var i = word1.length - 1; i >= 0; i--) {
+                revers += word1[i];
+            }
+
+            document.getElementById('result').innerHTML = revers;
+        }
+        function pushButton5() {
+            const word1 = document.getElementById('text1_id').value;
+            const word2 = document.getElementById('text2_id').value;
+            var text_second = word1[1] + word2[1]
+            document.getElementById('result').innerHTML = text_second;
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

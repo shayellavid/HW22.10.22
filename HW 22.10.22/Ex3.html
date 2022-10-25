@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>strings</title>
+</head>
+
+<body>
+    <!--create a selector with colors [i.e. red, blue, green]
+   add a button 
+   add a text 'HELLO JAVA SCRIPT' (i.e. in paragraph)
+   whenever the user clicks the button, draw the text in the selected color 
+-->
+    <p>
+    <h2 id="my_color">HELLO JAVA SCRIPT</h2>
+    <select name="options" id="options">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+    </select>
+    <button onclick="pushActionButton()">Action!</button>
+    </p>
+    <p id="the_list"></p>
+</body>
+<script>
+
+
+
+
+    function pushActionButton() {
+        const selected_option = document.getElementById('options').value
+        if (selected_option == 'red') {
+            document.getElementById('my_color').style.color = "#CF0A0A";
+
+        }
+        else if (selected_option == 'blue') {
+            document.getElementById('my_color').style.color = "#0008C1";
+
+        }
+        else if (selected_option == 'green') {
+            document.getElementById('my_color').style.color = "#38E54D";
+
+        }
+
+
+        document.getElementById('the_list').innerHTML = list1
+    }
+
+
+</script>
+
+</html>
